@@ -8,12 +8,7 @@ package arithmetic;
 
 import java.util.Scanner;
 
-/** This class calls the method to perform 
- * arithmetic operations based on user input
- * execute the code check the output
- * @author sivagamasrinivasan
- * 
- */
+
 public class Arithmetic {
 
     public static void main(String[] args) {
@@ -31,11 +26,10 @@ public class Arithmetic {
         in.close();
 
         // --- Delegate to CalculateClass — loose coupling ---
-        // Mirrors: Card[] hand = GenerateClass.generateHand(10);
+
         ArithmeticBase[] results = CalculateClass.generateResults(x, y);
 
         // --- Print all results ---
-        // Mirrors: for(Card c: hand) { System.out.println(c.getSuit() + " " + c.getValue()); }
         System.out.println("\n--- Results for x=" + x + "  y=" + y + " ---");
 
         for (ArithmeticBase a : results) {

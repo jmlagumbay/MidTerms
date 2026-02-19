@@ -25,8 +25,7 @@ public class CalculateClass {
         int numOperations = ArithmeticBase.Operation.values().length; // 4 constants
         ArithmeticBase[] results = new ArithmeticBase[numOperations];
 
-        // Loop through every enum constant — no String or int input needed
-        // Mirrors: Card.Value value = Card.Value.values()[random.nextInt(numberValues)];
+        // Loop through every enum constant
         for (int i = 0; i < numOperations; i++) {
             ArithmeticBase.Operation op = ArithmeticBase.Operation.values()[i];
             results[i] = new ArithmeticBase(x, y, op);
