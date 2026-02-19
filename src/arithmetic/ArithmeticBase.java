@@ -1,39 +1,66 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package arithmetic;
 
-import java.util.Scanner;
-
-/** This class takes String input plus,minus,divide and times
- * from user and execute the arithmetic operation
- * change the code to use enum instead String and mention the advantage of enum.
- * @author sivagamasrinivasan
- * 
+/**
+ * @author John Lagumbay
  */
-public class ArithmeticBase 
-{
- public double x,y;
-    double calculate(double x, double y) 
-        {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter arithmetic operation to Perform: ");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
-        {
-            case "PLUS":
-                return x + y;
-            case "MINUS":
-                return x - y;
-            case "TIMES":
-                return x * y;
-            case "DIVIDE":
-                return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
-        }
+public class ArithmeticBase {
+
+    // enum — constants, special class, user defined data type
+    public enum Operation { PLUS, MINUS, TIMES, DIVIDE }
+
+    private double x;         // first operand
+    private double y;         // second operand
+    private Operation op;     // store enum constant — user defined type
+
+    public ArithmeticBase(double x, double y, Operation op) {
+        this.x = x;
+        this.y = y;
+        this.op = op;
     }
-   
+
+    // --- Getters ---
+
+    /**
+     * @return the first operand x
+     */
+    public double getX() {
+        return x;
+    }
+
+    /**
+     * @return the second operand y
+     */
+    public double getY() {
+        return y;
+    }
+
+    /**
+     * @return the Operation enum constant
+     */
+    public Operation getOp() {
+        return op;
+    }
+
+    // --- Setters ---
+
+    /**
+     * @param x the first operand to set
+     */
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    /**
+     * @param y the second operand to set
+     */
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    /**
+     * @param op the Operation enum constant to set
+     */
+    public void setOp(Operation op) {
+        this.op = op;
+    }
 }
